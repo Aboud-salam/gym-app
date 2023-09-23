@@ -1,0 +1,16 @@
+.section-padding {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.custom-container {
+  width: 83%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 767px) {
+  .custom-container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
