@@ -21,6 +21,7 @@ const SignIn = ({ flexBetween, styles }: SignInProp) => {
   );
 };
 const Navbar = ({ refs }: Props) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [onTop, setOnTop] = useState(true);
   const [isToggled, setToggled] = useState(false);
   const [signToggled, setSignToggle] = useState(false);
@@ -31,12 +32,12 @@ const Navbar = ({ refs }: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const flexBetween = "flex items-center justify-between";
-  const navBackground = onTop ? "" : "bg-primary-100";
+  const navBackground = onTop ? "" : "scrolled";
 
   return (
     <nav>
       <div
-        className={`w-full px-4 fixed top-0 z-30 py-6 transition-all duration-100 ${navBackground}`}
+        className={`navbar-background w-full px-4 fixed top-0 z-30 py-6 ${navBackground}`}
       >
         <div className={`${flexBetween} mx-auto`}>
           <div className={`${flexBetween} w-full gap-16`}>

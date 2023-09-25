@@ -12,3 +12,11 @@ body,
   font-family: "DM sans", sans-serif;
   @apply text-gray-500;
 }
+.navbar-background {
+  background-color: transparent;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+.navbar-background.scrolled {
+  background-color: #ffe1e0;
+}
