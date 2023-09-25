@@ -24,10 +24,10 @@ const Navbar = ({ refs }: Props) => {
   const [onTop, setOnTop] = useState(true);
   const [isToggled, setToggled] = useState(false);
   const [signToggled, setSignToggle] = useState(false);
-  const { handleScroll } = useOnScroll(refs, setOnTop);
+  const { handleNavOnScroll } = useOnScroll(refs, setOnTop);
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleNavOnScroll);
+    return () => window.removeEventListener("scroll", handleNavOnScroll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const flexBetween = "flex items-center justify-between";
@@ -96,7 +96,7 @@ const Navbar = ({ refs }: Props) => {
           />
           <div className="flex flex-col ">
             <div className={`flex ml-8 flex-col gap-4 pt-12 text-xl`}>
-<Link>Home</Link>
+              <Link>Home</Link>
               <Link>Benefits</Link>
               <Link>Our Classes</Link>
               <Link>Contact Us</Link>
