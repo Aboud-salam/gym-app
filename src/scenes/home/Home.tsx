@@ -4,19 +4,25 @@ import ActionButton from "@/shared/components/ActionButton";
 import LearnMore from "@/shared/components/LearnMore";
 import { selectedPage } from "@/shared/types/types";
 import Sponsors from "../sponsors";
+import "./Home.css";
 type Props = {
   addRef: (el: HTMLElement) => void;
+  onTop: boolean;
 };
-const Home = ({ addRef }: Props) => {
+const Home = ({ addRef, onTop }: Props) => {
+  const isOnTop = onTop ? "scrolled" : "";
   return (
     <section ref={addRef} id="home" className="pt-[88px]">
       <div className="custom-container lg:flex-row flex flex-col items-center mt-20 lg:mt-0 lg:gap-16 gap-8">
         <div className="lg:w-3/5 text-center lg:text-left">
-          <div className="heading-img relative lg:before:content-evolvetext before:absolute before:-top-[70px] before:-z-[1] z-10 before:-left-[120px]">
+          <div
+            className={`${isOnTop} 
+            home-text-image heading-img relative lg:before:content-evolvetext before:absolute before:-top-[70px] before:-z-[1] z-10 before:-left-[120px]`}
+          >
             <img
               src={HomeText}
               alt="home-page-heading"
-              className="mx-auto lg:mx-0"
+              className=" mx-auto lg:mx-0"
             />
           </div>
           <p className="my-5 px-1">

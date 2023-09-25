@@ -19,8 +19,5 @@ body,
 }
 .navbar-background.scrolled {
   background-color: #ffe1e0;
-  -webkit-filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
-    drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
-  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
-    drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  box-shadow: #999 1px 1px 5px;
 }

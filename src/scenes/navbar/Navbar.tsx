@@ -3,10 +3,18 @@ import { UserIcon } from "@heroicons/react/24/outline";
 import Link from "./Link";
 import Logo from "@/assets/Logo.png";
 import ActionButton from "@/shared/components/ActionButton";
-import { RefObject, useEffect, useState } from "react";
+import {
+  Dispatch,
+  RefObject,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import useOnScroll from "@/shared/hooks/useOnScroll";
 type Props = {
   refs: RefObject<HTMLElement[]>;
+  onTop: boolean;
+  setOnTop: Dispatch<SetStateAction<boolean>>;
 };
 type SignInProp = {
   flexBetween?: string;
@@ -20,9 +28,9 @@ const SignIn = ({ flexBetween, styles }: SignInProp) => {
     </div>
   );
 };
-const Navbar = ({ refs }: Props) => {
+const Navbar = ({ refs, onTop, setOnTop }: Props) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [onTop, setOnTop] = useState(true);
+
   const [isToggled, setToggled] = useState(false);
   const [signToggled, setSignToggle] = useState(false);
   const { handleNavOnScroll } = useOnScroll(refs, setOnTop);

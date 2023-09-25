@@ -1,5 +1,5 @@
 import "./styles.css";
-import { Dispatch, SetStateAction, useRef } from "react";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
 import { selectedPage } from "./shared/types/types";
 import React, { Suspense } from "react";
 const Navbar = React.lazy(() => import("@/scenes/navbar"));
@@ -13,6 +13,7 @@ export type LinkContext = {
   setLink: Dispatch<SetStateAction<selectedPage | string>>;
 };
 function App() {
+  const [onTop, setOnTop] = useState(true);
   const refs = useRef<HTMLElement[]>([] as HTMLElement[]);
   console.log("re-rendered");
   const addRef = (el: HTMLElement) => {
@@ -25,8 +26,8 @@ function App() {
           <div className="w-[30px] h-[30px] rounded-full border border-primary-500 border-l-0 animate-spin"></div>
         }
       >
-        <Navbar refs={refs} />
-        <Home addRef={addRef} />
+        <Navbar refs={refs} onTop={onTop} setOnTop={setOnTop} />
+        <Home addRef={addRef} onTop={onTop} />
         <Benefits addRef={addRef} />
         <OurClasses addRef={addRef} />
         <ContactUs addRef={addRef} />
