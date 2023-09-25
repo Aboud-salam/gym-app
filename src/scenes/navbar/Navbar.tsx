@@ -86,8 +86,8 @@ const Navbar = ({ refs }: Props) => {
           </div>
         </div>
         <div
-          className={`bg-primary-100 w-[200px] h-[100vh] transition-all duration-300 md:hidden drop-shadow-xl fixed top-0 z-40 ${
-            isToggled ? "right-0" : "-right-[200px]"
+          className={`bg-primary-100 w-[200px] h-[100vh] transition-all duration-300 md:hidden drop-shadow-xl fixed top-0 right-0 z-40 ${
+            isToggled ? "translate-x-0" : "translate-x-[200px]"
           } `}
         >
           <XMarkIcon
