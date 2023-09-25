@@ -1,4 +1,3 @@
-import { selectedPage } from "../types/types";
 import { Dispatch, RefObject, SetStateAction, useContext } from "react";
 import { navContext } from "@/contexts/navLinks-context";
 const useOnScroll = (
@@ -9,10 +8,8 @@ const useOnScroll = (
   const handleNavOnScroll = () => {
     if (window.scrollY === 0) {
       setOnTop(true);
-      setLink(selectedPage.Home);
     } else {
       setOnTop(false);
-      setLink(selectedPage.none);
     }
   };
   const handleSectionsScroll = () => {

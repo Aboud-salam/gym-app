@@ -31,12 +31,12 @@ const Navbar = ({ refs }: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const flexBetween = "flex items-center justify-between";
-  const navBackground = onTop ? "" : "bg-primary-100 drop-shadow";
+  const navBackground = onTop ? "" : "bg-primary-100";
 
   return (
     <nav>
       <div
-        className={`w-full px-4 fixed top-0 z-30 py-6 transition-all duration-150 ${navBackground}`}
+        className={`w-full px-4 fixed top-0 z-30 py-6 transition-all duration-100 ${navBackground}`}
       >
         <div className={`${flexBetween} mx-auto`}>
           <div className={`${flexBetween} w-full gap-16`}>
