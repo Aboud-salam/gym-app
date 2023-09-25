@@ -1,21 +1,9 @@
 import Htext from "@/shared/components/Htext";
 import benefitGraph from "@/assets/BenefitsPageGraphic.webp";
 import ActionButton from "@/shared/components/ActionButton";
-import { motion } from "framer-motion";
-
 const CTA = () => {
   return (
-    <motion.section
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.5 }}
-      variants={{
-        hidden: { opacity: 0, x: -50 },
-        visible: { opacity: 1, x: 0 },
-      }}
-      className="flex lg:flex-row flex-col items-center justify-center section-padding custom-container gap-8"
-    >
+    <section className="flex lg:flex-row flex-col items-center justify-center section-padding custom-container gap-8">
       <div className="">
         <img src={benefitGraph} alt="" />
       </div>
@@ -42,7 +30,7 @@ const CTA = () => {
         </p>
         <ActionButton style="block w-fit lg:mx-0 mx-auto">Join Us</ActionButton>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

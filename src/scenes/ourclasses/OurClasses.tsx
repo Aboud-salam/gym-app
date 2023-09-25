@@ -1,13 +1,12 @@
 import { classesImgs } from "@/constants";
 import SectionHeader from "@/shared/components/SectionHeader";
-import { motion } from "framer-motion";
 import ActionButton from "@/shared/components/ActionButton";
 type Props = {
   addRef: (el: HTMLElement) => void;
 };
 const OurClasses = ({ addRef }: Props) => {
   return (
-    <motion.section ref={addRef} id="ourclasses" className="bg-primary-100">
+    <section ref={addRef} id="ourclasses" className="bg-primary-100">
       <div className="custom-container section-padding">
         <SectionHeader
           paragraph="Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
@@ -47,7 +46,7 @@ const OurClasses = ({ addRef }: Props) => {
           <ActionButton>Contact Us</ActionButton>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

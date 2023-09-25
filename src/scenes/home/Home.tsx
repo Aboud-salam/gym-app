@@ -3,7 +3,6 @@ import HomeText from "@/assets/HomePageText.png";
 import ActionButton from "@/shared/components/ActionButton";
 import LearnMore from "@/shared/components/LearnMore";
 import { selectedPage } from "@/shared/types/types";
-import { motion } from "framer-motion";
 import Sponsors from "../sponsors";
 type Props = {
   addRef: (el: HTMLElement) => void;
@@ -12,17 +11,7 @@ const Home = ({ addRef }: Props) => {
   return (
     <section ref={addRef} id="home" className="pt-[88px]">
       <div className="custom-container lg:flex-row flex flex-col items-center mt-20 lg:mt-0 lg:gap-16 gap-8">
-        <motion.div
-          className="lg:w-3/5 text-center lg:text-left"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-        >
+        <div className="lg:w-3/5 text-center lg:text-left">
           <div className="heading-img relative lg:before:content-evolvetext before:absolute before:-top-[70px] before:-z-[1] z-10 before:-left-[120px]">
             <img
               src={HomeText}
@@ -39,7 +28,7 @@ const Home = ({ addRef }: Props) => {
             <ActionButton>Join Now</ActionButton>
             <LearnMore href={selectedPage.ContactUs}>Learn More</LearnMore>
           </div>
-        </motion.div>
+        </div>
         <div className="relative z-20">
           <img src={HomeGraphic} alt="home-page-graphic" />
         </div>
