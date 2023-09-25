@@ -5,7 +5,7 @@ const Footer = () => {
     <section className="bg-primary-100">
       <div
         className={`custom-container lg:grid-cols-3 md:grid-cols-2 grid-cols-[minmax(300px,_1fr)] 
-        text-center md:text-left justify-items-center grid justify-center section-padding gap-20`}
+        text-center md:text-left justify-items-center grid justify-center section-padding gap-12`}
       >
         <div className="flex flex-col lg:gap-6 gap-3 md:items-start items-center max-w-[350px] md:max-w-none">
           <img src={logo} alt="logo" className="mx-auto md:mx-0" />
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
         <div className="">
           <h4 className="font-bold">Contact Us</h4>
-          <p className="my-3">Tempus metus mattis risus volutpat egestas.</p>
+          <p className="my-1">Tempus metus mattis risus volutpat egestas.</p>
           <p>
             <a
               href="#"
