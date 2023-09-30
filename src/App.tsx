@@ -14,10 +14,10 @@ export type LinkContext = {
 };
 function App() {
   const [onTop, setOnTop] = useState(true);
-  const refs = useRef<HTMLElement[]>([] as HTMLElement[]);
+  const sectionsRefs = useRef<HTMLElement[]>([] as HTMLElement[]);
   console.log("re-rendered");
   const addRef = (el: HTMLElement) => {
-    refs.current.push(el);
+    sectionsRefs.current.push(el);
   };
   return (
     <div className="app bg-gray-20">
@@ -26,7 +26,7 @@ function App() {
           <div className="w-[30px] h-[30px] rounded-full border border-primary-500 border-l-0 animate-spin"></div>
         }
       >
-        <Navbar refs={refs} onTop={onTop} setOnTop={setOnTop} />
+        <Navbar refs={sectionsRefs} onTop={onTop} setOnTop={setOnTop} />
         <Home addRef={addRef} onTop={onTop} />
         <Benefits addRef={addRef} />
         <OurClasses addRef={addRef} />

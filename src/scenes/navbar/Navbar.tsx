@@ -36,6 +36,10 @@ const Navbar = ({ refs, onTop, setOnTop }: Props) => {
   const { handleNavOnScroll } = useOnScroll(refs, setOnTop);
   useEffect(() => {
     window.addEventListener("scroll", handleNavOnScroll);
+    const observer = new IntersectionObserver((entries) => {
+      entries.map((entry) => console.log(entry));
+    });
+    refs.current?.map((ref) => observer.observe(ref));
     return () => window.removeEventListener("scroll", handleNavOnScroll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
