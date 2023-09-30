@@ -33,14 +33,10 @@ const Navbar = ({ refs, onTop, setOnTop }: Props) => {
 
   const [isToggled, setToggled] = useState(false);
   const [signToggled, setSignToggle] = useState(false);
-  const { handleNavOnScroll } = useOnScroll(refs, setOnTop);
+  const { handleScroll } = useOnScroll(refs, setOnTop);
   useEffect(() => {
-    window.addEventListener("scroll", handleNavOnScroll);
-    const observer = new IntersectionObserver((entries) => {
-      entries.map((entry) => console.log(entry));
-    });
-    refs.current?.map((ref) => observer.observe(ref));
-    return () => window.removeEventListener("scroll", handleNavOnScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const flexBetween = "flex items-center justify-between";
